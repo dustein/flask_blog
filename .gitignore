@@ -1,3 +1,5 @@
+ambiente_VENV/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
