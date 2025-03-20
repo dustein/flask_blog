@@ -4,18 +4,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <link href="/static/favicon.ico" rel="icon">
-    <link href="./static/style.css" rel="stylesheet">
+    <!-- <link href="/static/favicon.ico" rel="icon"> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>
       Adiante{% block title %}{% endblock %}
     </title>
   </head>
 
-  <body>
-    <header>
+  <body class="flex-col">
+    <header class="flex justify-between p-4 bg-slate-800 text-gray-100">
       <h1>HEADER</h1>
       <h2>OUTRO</h2>
-      <ul>
+      <ul class="flex gap-2">
         <li>Inicio</li>
         <li>DuStein</li>
         <li>Contato</li>
@@ -23,6 +24,7 @@
     </header>
     
     <main>
+      CADE A FOLHA DE ESTILOS!!!
       {% block main %}{% endblock %}
     </main>
     
