@@ -7,6 +7,15 @@
     <!-- <link href="/static/favicon.ico" rel="icon"> -->
     <!-- <link rel="stylesheet" href="style.css"> -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .hamburger-toggle {
+          @apply [&>div]:h-0 [&>div]:bg-white [&>div::before]:before:translate-y-0 [&>div::before]:before:rotate-45 [&>div::before]:after:translate-y-0 [&>div::before]:after:-rotate-45;
+        }
+      }
+    </style>
+    
     <title>
       Adiante
 | Pagina de Teste
@@ -14,12 +23,17 @@
     </title>
   </head>
 
-  <body class="flex-col flex justify-between min-h-screen">
+  <body class="flex-col flex justify-between bg-slate-200">
     <header class="flex justify-between p-4 bg-slate-950 text-gray-100">
       <div id="area_logo" class="flex-col">
         <div id="page_title" class="underline decoration-double text-3xl pl-1 pb-3 text-orange-400">Adiante</div>
         <div id="page_description" class="pl-1 text-sm text-gray-300">aprender, criar, e tecnologias</div>
       </div>
+      <!-- hamburger menu start-->
+      <div id="toggleHamburger" class="grid place-content-center">
+        <div class="w-16 h-2 bg-white rounded-full before:content-[''] before:absolute before:w-16 before:h-2 before:bg-white before:rounded-full before:-translate-y-4 after:content-[''] after:absolute after:w-16 after:h-2 after:bg-white after:rounded-full after:translate-y-4 after:transition-all after:duration-150"></div>
+      </div>
+      <!-- hamburger menu end -->
       <!-- <ul class="flex gap-2">
         <li>Index</li>
         <li>DuStein</li>
@@ -27,10 +41,10 @@
       </ul>       -->
     </header>
     
-    <main class="p-4 flex-grow bg-slate-200">
+    <main class="p-4 flex-grow">
       
 <h1 class="text-xl font-bold underline text-center">Como Iniciar um Projeto</h1>
-<h2 class="text-lg text-center pb-2">Saindo da Inércia, Xô Procastinação</h2>
+<h2 class="text-lg text-center pb-2">Sair da inércia e dar um basta na procastinação</h2>
 <p class="indent-4 pb-2 text-justify">
   Muitas vezes, com certeza, a parte mais difícial de um projeto, é iniciá-lo. Perdemos muito tempo pensando em um nome que impressione, a estilização perfeita, a melhor fonte de texto, o melhor timing para lançamento do produto... e nada. 
 </p>
