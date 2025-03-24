@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route("/")
 def nova_pagina():
     site_estatico = render_template("index.html")
-    converte_estatico(site_estatico, "segundo-teste.html")
+    converte_estatico(site_estatico, "inicio-projeto-blog.html")
     return render_template("index.html")
 
 def converte_estatico(renderizado, nova_pagina):

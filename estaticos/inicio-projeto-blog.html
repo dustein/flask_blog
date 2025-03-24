@@ -1,13 +1,33 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
 
-{% block title %}
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <!-- <link href="/static/favicon.ico" rel="icon"> -->
+    <link rel= "stylesheet" type= "text/css" href= "/static/style.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+      </style>
+    <title>
+      Adiante 
 | Pagina de Teste
-{% endblock %}
 
-{% block header %}
-{% endblock %}
+    </title>
+  </head>
 
-{% block main %}
+  <body>
+    <header>
+      <div id="area_logo">
+        <div id="logo">Adiante</div>
+        <div id="sub-logo">Aprender, Criar, Realizar</div>
+      </div>
+      <img id="hamburger" src="static/burger-menu-svgrepo-com.svg" alt="">
+    </header>
+    
+    <main>
+      <div class="conteudo">
+        
 <h1>Início do Projeto Blog</h1>
 <h2>Começar é o mais difícil...</h2>
 
@@ -51,4 +71,14 @@
 
 <p>Só vá e faça. Faça feio, faça ruim, mas faça. Depois corrige, depois melhora. Se houver depois. Porque afinal pode ser, e é muito provável que seja, mais um projeto abandonado. Então, não invista muito tempo e energia até achar que está valendo a pena. Comece e o resto, desenvolva aos poucos, conforme o resultado vier. Ou não.</p>
 
-{% endblock %}
+
+      </div>
+    </main>
+    
+    <footer>
+      <p>um site por <a href="http://dustein.com" target="_blank">DuStein</a></p>
+    </footer>
+    
+  </body>
+
+</html>
