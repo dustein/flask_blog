@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <!-- <link href="/static/favicon.ico" rel="icon"> -->
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .hamburger-toggle {
+          @apply [&>div]:h-0 [&>div]:bg-white [&>div]:before:translate-y-0 [&>div]:before:rotate-45 [&>div]:after:translate-y-0 [&>div]:after:-rotate-45;
+        }
+      }
+    </style>
+    
+    <title>
+      Adiante{% block title %}{% endblock %}
+    </title>
+  </head>
+
+  <body class="flex-col flex justify-between bg-slate-200">
+    <header class="flex justify-between p-4 bg-slate-950 text-gray-100">
+      <div id="area_logo" class="flex-col">
+        <div id="page_title" class="underline decoration-double text-3xl pl-1 pb-3 text-orange-400">Adiante</div>
+        <div id="page_description" class="pl-1 text-sm text-gray-300">aprender, criar, e tecnologias</div>
+      </div>
+
+      <img src="/templates/static/media/burger-menu-svgrepo-com.svg" alt="">
+      <!-- hamburger menu start-->
+      <!-- <div id="toggleHamburger" class="grid place-content-center">
+        <div class="w-16 h-2 bg-white rounded-full before:content-[''] before:absolute before:w-16 before:h-2 before:bg-white before:rounded-full before:-translate-y-4 after:content-[''] after:absolute after:w-16 after:h-2 after:bg-white after:rounded-full after:translate-y-4 after:transition-all after:duration-150"></div>
+      </div> -->
+      <!-- hamburger menu end -->
+      <!-- <ul class="flex gap-2">
+        <li>Index</li>
+        <li>DuStein</li>
+        <li>Contato</li>
+      </ul>       -->
+    </header>
+    
+    <main class="p-4 flex-grow">
+      {% block main %}{% endblock %}
+    </main>
+    
+    <footer class="bg-gray-900 text-gray-300 text-center">
+      <p class="text-sm p-2">Um site de <button class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500"><a href="http://dustein.com" target="_blank">DuStein</a></button></p>
+
+      <a
+  class="group inline-block rounded-sm bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
+  href="#"
+>
+  <span class="block rounded-xs bg-white px-8 py-3 text-sm font-medium group-hover:bg-transparent">
+    Download
+  </span>
+</a>
+
+<!-- Pill -->
+
+<a class="group inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:ring-3 focus:outline-hidden" href="#"><span class="block rounded-full bg-white px-8 py-3 text-sm font-medium group-hover:bg-transparent">DuStein</span>
+</a>
+
+    </footer>
+  </body>
+
+</html>

@@ -1,4 +1,3 @@
-
 const toggleHamburger = document.querySelector('#toggleHamburger');
 
 toggleHamburger.onClick = () => (

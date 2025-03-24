@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+p {
+  text-indent: 2rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+a:hover {
+  color: coral;
+}
+
+/* AREA HEADER INICIO*/
+header {
+  background-color: black;
+  color: aliceblue;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#hamburger {
+  background-color: aliceblue;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+#logo {
+  font-family: "Montserrat Underline", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  text-decoration: underline rgba(255, 166, 0, 0.768);
+  text-underline-offset: 6px;
+  padding-left: 0.3rem;
+}
+
+#sub-logo {
+  padding-left: 0.3rem;
+}
+
+/* AREA HEADER FIM */
+/* AREA MAIN INICIO */
+
+main {
+  padding: 1.5rem;
+  text-align: justify;
+}
+/* AREA MAIN FIM */
+
+/* AREA FOOTER INICIO */
+
+footer {
+  background-color: black;
+  color: aliceblue;
+  padding: 0.6rem;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:visited {
+  color: rgb(171, 210, 245);
+}
+
+
+/* AREA FOOTER FIM */
