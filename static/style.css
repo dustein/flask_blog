@@ -24,7 +24,18 @@ p {
   margin-bottom: 1rem;
 }
 
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
 a:hover {
+  color: coral;
+  text-decoration: underline;
+
+}
+
+li:hover {
   color: coral;
 }
 
@@ -85,7 +96,7 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   list-style: none;
   position: absolute;
   top: 4.5rem;
