@@ -8,7 +8,17 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-      </style>
+    </style>
+    <script>
+      function menuToggle() {
+        let menu = document.querySelector(".links-menu");
+        if (menu.style.display === "flex") {
+          menu.style.display = "none";
+        } else {
+          menu.style.display = "flex";
+        }
+      }
+    </script>
     <title>
       Adiante {% block title %}{% endblock %}
     </title>
@@ -16,11 +26,25 @@
 
   <body>
     <header>
-      <div id="area_logo">
+          
+      <div class="area-logo">
         <div id="logo">Adiante</div>
         <div id="sub-logo">Aprender, Criar, Realizar</div>
       </div>
-      <img id="hamburger" src="static/burger-menu-svgrepo-com.svg" alt="">
+      <div class="area-menu">
+        <ul class="links-menu">
+          <li>Inicial</li>
+          <li>DuStein</li>
+          <li>Contato</li>
+        </ul>
+        <a href="javascript:void(0);" onclick="menuToggle()"><img id="hamburger" src="static/burger-menu-svgrepo-com.svg" alt=""></a>
+        <ul class="links-menu-800">
+          <li>Inicial</li>
+          <li>DuStein</li>
+          <li>Contato</li>
+        </ul>
+
+      </div>
     </header>
     
     <main>

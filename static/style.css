@@ -38,9 +38,31 @@ body {
 header {
   background-color: black;
   color: aliceblue;
-  padding: 0.5rem;
+  padding-top: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.area-logo {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+#logo {
+  font-family: "Montserrat Underline", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+  text-decoration: underline rgba(255, 166, 0, 0.768);
+  text-underline-offset: 10px;
+  padding-left: 0.3rem;
+}
+
+#sub-logo {
+  padding-left: 0.3rem;
+  padding-top: 0.5rem;
+  font-size: 1.2rem;
+  color: rgb(253, 218, 153);
 }
 
 #hamburger {
@@ -51,19 +73,40 @@ header {
   margin: 0.5rem;
 }
 
-#logo {
-  font-family: "Montserrat Underline", sans-serif;
-  font-size: 2rem;
-  letter-spacing: 0.2rem;
-  text-decoration: underline rgba(255, 166, 0, 0.768);
-  text-underline-offset: 6px;
-  padding-left: 0.3rem;
+.area-menu {
+  display: flex;
+  align-items: center;
+  padding-right: 1.5rem;
+  position: relative;
 }
 
-#sub-logo {
-  padding-left: 0.3rem;
+.links-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.5rem;
+  list-style: none;
+  position: absolute;
+  top: 4.5rem;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem 2rem 1rem 2rem;
 }
 
+.links-menu-800 {
+  display: none;
+}
+
+/* 
+.links-hamburger {
+  overflow: hidden;
+  position: relative;
+} */
+
+.area-menu .links-menu {
+  display: none;
+}
 /* AREA HEADER FIM */
 /* AREA MAIN INICIO */
 
@@ -96,7 +139,20 @@ footer a:visited {
 
 @media screen and (min-width: 800px) {
   main {
-    margin-left: 10rem;
-    margin-right: 10rem;
+    max-width: 80vw;
+    margin: auto;
+  }
+
+  #hamburger {
+    display: none;
+  }
+   
+  .links-menu-800 {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    list-style: none;
+    padding-right: 1.5rem;  
   }
 }
