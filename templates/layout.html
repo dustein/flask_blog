@@ -6,9 +6,6 @@
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <!-- <link href="/static/favicon.ico" rel="icon"> -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>
     <script>
       function menuToggle() {
         let menu = document.querySelector(".links-menu");
@@ -28,8 +25,13 @@
     <header>
           
       <div class="area-logo">
-        <div id="logo">Adiante</div>
-        <div id="sub-logo">Aprender, Criar, Realizar</div>
+        <div id="logo-area">
+          <a href="#">
+            <div id="logo">Adiante</div>
+          </a>
+          <div class="play">>></div>
+        </div>
+        <div id="sub-logo">Learn & Create</div>
       </div>
       <div class="area-menu">
         <ul class="links-menu">
@@ -43,15 +45,15 @@
             <li>Contato</li>
           </a>
         </ul>
-        <a href="javascript:void(0);" onclick="menuToggle()"><img id="hamburger" src="static/burger-menu-svgrepo-com.svg" alt=""></a>
+        <a href="javascript:void(0);" onclick="menuToggle()"><img id="hamburger" src="static/burger-menu-svgrepo-com.svg" width="10" height="10" alt="menu icon"></a>
         <ul class="links-menu-800">
-          <a href="">
+          <a href="#">
             <li>Inicial</li>
           </a>
-          <a href="">
+          <a href="https://dustein.com">
             <li>DuStein</li>
           </a>
-          <a href="">
+          <a href="#">
             <li>Contato</li>
           </a>
         </ul>
@@ -61,6 +63,8 @@
     
     <main>
       <div class="conteudo">
+        <a href="#">Índice <<</a>
+        <br></br>
         {% block main %}{% endblock %}
       </div>
     </main>

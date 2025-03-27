@@ -1,79 +1,12 @@
-<!DOCTYPE html>
+# Titulo H1
+## Titulo H2
+### Titulo H3
 
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <!-- <link href="/static/favicon.ico" rel="icon"> -->
-    <link rel= "stylesheet" type= "text/css" href= "/static/style.css">
-    <script>
-      function menuToggle() {
-        let menu = document.querySelector(".links-menu");
-        if (menu.style.display === "flex") {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "flex";
-        }
-      }
-    </script>
-    <title>
-      Adiante 
-| Pagina de Teste
+Este é um teste de Parágrafo. Primeiro Parágrafo.
+Será que muda a linha ou vai conntinuar na mesma?
 
-    </title>
-  </head>
+Pra mudar a linha, necessário deixar uma linha em branco de espaço...
 
-  <body>
-    <header>
-          
-      <div class="area-logo">
-        <div id="logo-area">
-          <a href="#">
-            <div id="logo">Adiante</div>
-          </a>
-          <div class="play">>></div>
-        </div>
-        <div id="sub-logo">Learn & Create</div>
-      </div>
-      <div class="area-menu">
-        <ul class="links-menu">
-          <a href="">
-            <li>Inicial</li>
-          </a>
-          <a href="">
-            <li>DuStein</li>
-          </a>
-          <a href="">
-            <li>Contato</li>
-          </a>
-        </ul>
-        <a href="javascript:void(0);" onclick="menuToggle()"><img id="hamburger" src="static/burger-menu-svgrepo-com.svg" width="10" height="10" alt="menu icon"></a>
-        <ul class="links-menu-800">
-          <a href="#">
-            <li>Inicial</li>
-          </a>
-          <a href="https://dustein.com">
-            <li>DuStein</li>
-          </a>
-          <a href="#">
-            <li>Contato</li>
-          </a>
-        </ul>
-
-      </div>
-    </header>
-    
-    <main>
-      <div class="conteudo">
-        <a href="#">Índice <<</a>
-        <br></br>
-        
-<h1>Titulo H1</h1>
-<h2>Titulo H2</h2>
-<h3>Titulo H3</h3>
-<p>Este é um teste de Parágrafo. Primeiro Parágrafo.
-Será que muda a linha ou vai conntinuar na mesma?</p>
-<p>Pra mudar a linha, necessário deixar uma linha em branco de espaço...</p>
 <h1>Início do Projeto Blog</h1>
 <h2>Começar é o mais difícil...</h2>
 
@@ -116,19 +49,3 @@ Será que muda a linha ou vai conntinuar na mesma?</p>
 <p>Cuidado com a busca pela melhor forma, pela eficiência, pela antecipação de problemas que podem nem vir a acontecer.</p>
 
 <p>Só vá e faça. Faça feio, faça ruim, mas faça. Depois corrige, depois melhora. Se houver depois. Porque afinal pode ser, e é muito provável que seja, mais um projeto abandonado. Então, não invista muito tempo e energia até achar que está valendo a pena. Comece e o resto, desenvolva aos poucos, conforme o resultado vier. Ou não.</p>
-  <form action="/" method="post">
-    <input type="file" name="arquivo-texto">
-    <p>Indique o arquivo MD</p>
-    <button type="submit">Enviar</button>
-  </form>
-
-      </div>
-    </main>
-    
-    <footer>
-      <p>um site por <a href="http://dustein.com" target="_blank">DuStein</a></p>
-    </footer>
-    
-  </body>
-
-</html>

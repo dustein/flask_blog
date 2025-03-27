@@ -3,18 +3,28 @@
 # 
 # 
 import os
-from flask import Flask, url_for, render_template
+import markdown
+from flask import Flask, url_for, render_template, request
 
 app = Flask(__name__)
 
-# url_for('static', filename='style.css')
-
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 def nova_pagina():
-    site_estatico = render_template("index.html")
-    converte_estatico(site_estatico, "inicio-projeto-blog.html")
-    return render_template("index.html")
+    if request.method == "POST":
+        texto_input = request.form.get("arquivo-texto")
+        print(texto_input)
 
+    else:
+        texto_input = "texto.md"
+        with open(texto_input, "r", encoding="utf-8") as file:
+            conteudo = markdown.markdown(file.read())
+            site_estatico = render_template("index.html", conteudo=conteudo)
+            converte_estatico(site_estatico, "inicio-projeto-blog.html")
+            return render_template("index.html", conteudo=conteudo)
+
+
+
+# FUNCAO PARA EXTRAIR O HML ESTATICO
 def converte_estatico(renderizado, nova_pagina):
     output_dir = 'estaticos'
     if not os.path.exists(output_dir):

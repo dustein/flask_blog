@@ -8,47 +8,10 @@
 {% endblock %}
 
 {% block main %}
-<h1>Início do Projeto Blog</h1>
-<h2>Começar é o mais difícil...</h2>
-
-<p>Eu caí na armadilha. Caí no loop infinito de escolhas das possibilidades para iniciar um projeto. Um projeto que muito provavelmente não vai chegar a nenhum resultado concreto, isso já é esperado. Mas, é um projeto, um pequeno impulso pra fazer a roda começar a girar, pra romper a inércia, pra ampliar a visão para as possibilidades até então invisíveis, talvez óbvias mas despercebidas por toda a velocidade do ritmo de vida que se leva.</p>
-
-<p>E assim foi. Pra começar a vivência em um novo nicho, o da tecnologia, depois de mais de dois anos estudando e começando e abandonando projetos, na maioria das vezes, ou mesmo finalizando alguns mas que tinham o objetivo de aprendizado unicamente, decidi tentar fazer o que eu já sei que consigo fazer. Escrever.</p>
-
-<p>Escrever pra começar, escrever pra eu mesmo conseguir enxergar onde estou atualmente nesse mundo de tecnologias.</p>
-
-<p>Então era fácil, cômodo. Já criei sites e blogs, desde o início do ano 2000. Blogspot, WordPress, ferramentas para publicação. Tive que aprender tecnologias, mas o principal era conteúdo. Eu sei fazer conteúdo quando conheço o tema.</p>
-
-<p>Mas agora, eu já sei algumas coisas mais de programação, linguagens, sistemas. Então achei que valia a pena não usar WordPress, achei que valia a pena criar conteúdo com um site mais rápido, mais simples, melhor para SEO, basicamente HTML, CSS e pouco Javascript.</p>
-
-<p>Ainda poderia aproveitar que, fazendo esse projeto com arquivos estáticos, sem os requisitos de ambiente de um CMS, banco de dados, etc, seria tranquilo hospedar o projeto sem ter custos de hospedagem.</p>
-
-<p>Passei então a estudar como fazer isso, um simples “blog”, usando as tecnologias que eu conheço atualmente. E aí começou o ciclo sem fim da busca da melhor forma, do excesso de engenharia, das soluções complexas demais para um problema simples demais.</p>
-
-<p>Se eu fizer páginas simples em HTML, no padrão, vai ser suficiente. Mas, eu gosto das coisas bem feitas, bonitas. E quando eu quiser mexer na aparência do site? Quando o projeto estiver grande, com muitas páginas, e quiser mudar alguma coisa estrutural que tenha que editar todos os arquivos HTML um por um? E outros poréns, que minha cabeça foi criando.</p>
-
-<p>Primeiro pensei em fazer HTML básico mesmo, e quando um dia precisasse alterar centenas de imaginários arquivos, faria um programa em Python para automatizar a edição.</p>
-
-<p>Depois pensando já na hospedagem, vi que o pessoal hoje usa muito os serviços da Vercel no plano gratuito. Daí pensei por que não revisitar o que eu tinha estudado de React para criar uma aplicação que gere páginas estáticas com HTML e CSS. E pesquisei, voltei a ler a documentação de React.</p>
-
-<p>Em dado momento, achei que estava perdendo tempo em lembrar uma linguagem e framwork que eu já não via hamais de um ano, porque atualmente eu tenho estudado e feito mais coisas usando Python. Daí passei a pesquisar como criar as páginas estáticas usando Flask. E fui desenvolvendo, prendendo, errando.</p>
-
-<p>Até que consegui gerar os arquivos HTML estáticos de forma quase automatizada. Mas tive problemas entender as configurações de pastas e arquivos para capturar a folha de estilos que eu havia criado pro CSS.</p>
-
-<p>Assim, para testar, inseri uma conexão com o framework Tailwind CSS. Funcionou. Mas aí tive que voltar para lembrar as classes e configurações desse framework, que eu já havia usado mas há bastante tempo atrás. Mais recentemente meus projetos usaram Bootsrap CSS, mas eu particularmente não curtia muito. </p>
-
-<p>Ok, iria ficar com o Tailwind. Mas os testes que fiz foram usando o link para a CDN deles, em ambiente de desenvolvimento, então fui pesquisar como instalar propriamente o framework CSS no ambiente Flask para poder usar em produção, já que eu só havia usado antes com React.</p>
-
-<p>Ok, pra instalar teria que usar o NPM, e pra isso eu precisava instalar o NodeJs, que eu já não tinha porque havia começado um novo sistema no WSL2 do Windows e não cheguei a usar NodeJs.</p>
-
-<p>E por aí continuou todo o ciclo de estudar, tenta aplicar, revê o plano, muda de tecnologia, etc. E o projeto, bobo, bobo, escrever textos… nunca saiu, nunca teve conteúdo produzido, nunca foi pro ar.</p>
-
-<p>Quer dizer, nunca é exagero, se você está lendo esse texto, porque se está, é porque teve a hora do basta do vai ou racha, e consegui me convencer a publicar o que eu tinha com os meios que eu tinha.</p>
-
-<p>Mas, todo esse tempo perdido, e já posso contar perto de uma semana de pesquisas e tentativa e erro, por baixo, cinco horas por dia.</p>
-
-<p>Cuidado com a busca pela melhor forma, pela eficiência, pela antecipação de problemas que podem nem vir a acontecer.</p>
-
-<p>Só vá e faça. Faça feio, faça ruim, mas faça. Depois corrige, depois melhora. Se houver depois. Porque afinal pode ser, e é muito provável que seja, mais um projeto abandonado. Então, não invista muito tempo e energia até achar que está valendo a pena. Comece e o resto, desenvolva aos poucos, conforme o resultado vier. Ou não.</p>
-
+{{ conteudo|safe }}
+  <form action="/" method="post">
+    <input type="file" name="arquivo-texto">
+    <p>Indique o arquivo MD</p>
+    <button type="submit">Enviar</button>
+  </form>
 {% endblock %}

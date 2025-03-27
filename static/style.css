@@ -1,3 +1,21 @@
+/* FONTES SEM PASSAR PELO CDN GOOGLE */
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/Roboto/static/Roboto-Regular.ttf') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-underline-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat Underline';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/Montserrat_Underline/static/MontserratUnderline-Regular.ttf') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -60,20 +78,36 @@ header {
   padding-left: 1rem;
 }
 
+#logo-area {
+  display: flex;
+  align-items: center;
+}
+
 #logo {
+  display: flex;
+  align-items: center;
   font-family: "Montserrat Underline", sans-serif;
   font-size: 2.5rem;
   letter-spacing: 0.2rem;
-  text-decoration: underline rgba(255, 166, 0, 0.768);
+  text-decoration: underline #ffa600c4;
   text-underline-offset: 10px;
   padding-left: 0.3rem;
+}
+
+.play {
+  font-size: 1.5rem;
+  color: #fdda99;
+  transform: scaleY(4);
+  letter-spacing: 0.5rem;
+  padding-left: 1rem;
 }
 
 #sub-logo {
   padding-left: 0.3rem;
   padding-top: 0.5rem;
   font-size: 1.2rem;
-  color: rgb(253, 218, 153);
+  letter-spacing: 0.25rem;
+  color: #fdda99;
 }
 
 #hamburger {
@@ -82,6 +116,10 @@ header {
   height: 2rem;
   border-radius: 5px;
   margin: 0.5rem;
+}
+
+#hamburger:hover {
+  background-color: #ffa600c4;
 }
 
 .area-menu {
@@ -109,22 +147,22 @@ header {
   display: none;
 }
 
-/* 
-.links-hamburger {
-  overflow: hidden;
-  position: relative;
-} */
-
 .area-menu .links-menu {
   display: none;
 }
 /* AREA HEADER FIM */
+
 /* AREA MAIN INICIO */
 
 main {
   padding: 2.5rem;
   text-align: justify;
   flex-grow: 1;
+}
+
+.conteudo a {
+  color: rgb(70, 52, 18);
+  letter-spacing: 0.6rem;
 }
 /* AREA MAIN FIM */
 
@@ -149,6 +187,12 @@ footer a:visited {
 /* AREA FOOTER FIM */
 
 @media screen and (min-width: 800px) {
+  
+  header {
+    justify-content: center;
+    gap: 10rem;
+  }
+  
   main {
     max-width: 80vw;
     margin: auto;
