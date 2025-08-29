@@ -1,17 +1,41 @@
 {% extends "layout.html" %}
 
 {% block title %}
-| Pagina de Teste
+  {{ titulo }} - Caso de Polícia
+<!-- | Pagina de Teste -->
 {% endblock %}
 
 {% block header %}
 {% endblock %}
 
 {% block main %}
-{{ conteudo|safe }}
-  <form action="/" method="post">
-    <input type="file" name="arquivo-texto">
-    <p>Indique o arquivo MD</p>
-    <button type="submit">Enviar</button>
-  </form>
-{% endblock %}
+        <!-- ###########################   -->
+          <div class="post">
+              <h1 class="post-titulo" style="color: green;">{{ titulo }}</h1>
+              <div class="post-data" style="color: red;">{{ data_publicacao }}</div>
+              <div class="post-conteudo">
+                  {{ conteudo|safe }}
+              </div>
+          </div>
+
+          <hr>
+
+          <div class="comentarios" style="color: blue;">
+              <h2>Comentários</h2>
+              {% if comentarios %}
+                  {% for c in comentarios %}
+                      <div class="comentario">
+                          <span class="coment-autor">{{ c.autor }}</span>
+                          <span class="coment-data">{{ c.data }}</span>
+                          <div class="coment-conteudo">
+                              {{ c.conteudo }}
+                          </div>
+                      </div>
+                      <hr>
+                  {% endfor %}
+              {% else %}
+                  <p class="sem-comentario">Nenhum comentário encontrado.</p>
+              {% endif %}
+          </div>
+<!-- ####################### -->
+        {% endblock %}
