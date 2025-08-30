@@ -54,7 +54,8 @@ try:
     query_posts = """
         SELECT ID, post_title, post_date, post_content 
         FROM wp_posts 
-        WHERE post_status = 'publish' AND post_type = 'post';
+        WHERE post_status = 'publish' AND post_type = 'post'
+        LIMIT 2;
     """
     cursor.execute(query_posts)
     posts = cursor.fetchall()
@@ -79,12 +80,25 @@ try:
         comments = cursor.fetchall()
 
         # Criar nome de arquivo seguro para salvar
-        filename = sanitize_filename(f"{post_id}-{title}.md")
+        # filename = sanitize_filename(f"{post_id}-{title}.md")
+        filename = sanitize_filename(f"{post_id}-{title}.html")
+
+        def make_paragraphs(text):
+            # Divide nos parágrafos usando linhas em branco
+            partes = [p.strip() for p in text.split('\n\n') if p.strip()]
+
+            # Cria uma nova lista com as quebras de linha substituídas
+            paragrafos_formatados = [p.replace('\n', ' ') for p in partes]
+
+            # Encapsula cada parte em <p>
+            return '\n'.join([f"<p>{p}</p>" for p in paragrafos_formatados])
+
 
         # Construir conteúdo markdown
-        md_content = f"# {title}\n\n"
-        md_content += f"*Publicado em:* {date}\n\n"
-        md_content += content + "\n\n"
+        md_content = f"<h1 class='script_titulo'>{title}</h1>\n\n"
+        md_content += f"<p class='script_publicado'>Publicado em: {date}</p>\n\n"
+        corpo_html = make_paragraphs(content)
+        md_content += corpo_html + "\n"
         md_content += "## Comentários\n\n"
 
         if comments:
@@ -108,3 +122,4 @@ finally:
         cursor.close()
     if conn:
         conn.close()
+
