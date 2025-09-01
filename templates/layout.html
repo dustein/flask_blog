@@ -5,17 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <!-- <link href="/static/favicon.ico" rel="icon"> -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
-    <script>
-      function menuToggle() {
-        let menu = document.querySelector(".links-menu");
-        if (menu.style.display === "flex") {
-          menu.style.display = "none";
-        } else {
-          menu.style.display = "flex";
-        }
-      }
-    </script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style-cdp.css') }}">
+    
     <title>
       {% block title %}{% endblock %}
     </title>
@@ -23,84 +14,27 @@
 
   <body>
     <header>
-          
-      <div class="area-logo">
-        <div id="logo-area">
-          <a href="#">
-            <div id="logo">Caso de Polícia</div>
-          </a>
-          <div class="play">>></div>
+      <img class="header-img" src="../static/cdp/caso_de_policia.jpg" alt="">
+      <div class="sub-header">
+        <div class="area-logo">
+          <div id="logo-area">
+              <div id="logo">Caso de Polícia</div>
+              <div id="sub-logo">do Concurso ao Operacional</div>
         </div>
-        <div id="sub-logo">do Concurso ao Operacional</div>
-      </div>
-      <div class="area-menu">
-        <!-- <ul class="links-menu">
-          <a href="">
-            <li>Inicial</li>
-          </a>
-          <a href="">
-            <li>DuStein</li>
-          </a>
-          <a href="">
-            <li>Contato</li>
-          </a>
-        </ul>
-        <a href="javascript:void(0);" onclick="menuToggle()"><img id="hamburger" src="static/burger-menu-svgrepo-com.svg" width="10" height="10" alt="menu icon"></a>
-        <ul class="links-menu-800">
-          <a href="#">
-            <li>Inicial</li>
-          </a>
-          <a href="https://dustein.com">
-            <li>DuStein</li>
-          </a>
-          <a href="#">
-            <li>Contato</li>
-          </a>
-        </ul> -->
-
+        <div class="area-menu">
+          Índice
+        </div>
       </div>
     </header>
     
     <main>
       <div class="conteudo">
-        <a href="#">Índice <<</a>
-        <br></br>
         {% block main %}
-        <!-- ###########################   -->
-          <div class="post">
-              <h1 class="post-titulo" style="color: green;">{{ titulo }}</h1>
-              <div class="post-data" style="color: red;">{{ data_publicacao }}</div>
-              <div class="post-conteudo">
-                  {{ conteudo|safe }}
-              </div>
-          </div>
-
-          <hr>
-
-          <div class="comentarios" style="color: blue;">
-              <h2>Comentários</h2>
-              {% if comentarios %}
-                  {% for c in comentarios %}
-                      <div class="comentario">
-                          <span class="coment-autor">{{ c.autor }}</span>
-                          <span class="coment-data">{{ c.data }}</span>
-                          <div class="coment-conteudo">
-                              {{ c.conteudo }}
-                          </div>
-                      </div>
-                      <hr>
-                  {% endfor %}
-              {% else %}
-                  <p class="sem-comentario">Nenhum comentário encontrado.</p>
-              {% endif %}
-          </div>
-<!-- ####################### -->
         {% endblock %}
       </div>
     </main>
     
     <footer>
-      <!-- <p>um site por <a href="http://dustein.com" target="_blank">DuStein</a></p> -->
        <p>Caso de Polícia - do Concurso ao Operacional</p>
     </footer>
     

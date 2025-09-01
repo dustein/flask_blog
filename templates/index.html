@@ -1,41 +1,40 @@
 {% extends "layout.html" %}
 
 {% block title %}
-  {{ titulo }} - Caso de Polícia
-<!-- | Pagina de Teste -->
+  {{ post.titulo }} - Caso de Polícia
 {% endblock %}
 
 {% block header %}
 {% endblock %}
 
 {% block main %}
-        <!-- ###########################   -->
-          <div class="post">
-              <h1 class="post-titulo" style="color: green;">{{ titulo }}</h1>
-              <div class="post-data" style="color: red;">{{ data_publicacao }}</div>
-              <div class="post-conteudo">
-                  {{ conteudo|safe }}
-              </div>
-          </div>
+    <!-- Cabeçalho do Post -->
+    <div class="post-header">
+        <h1 class="post-titulo">{{ post.titulo|safe }}</h1>
+        <p class="post-data">{{ post.data_formatada|safe }}</p>
+    </div>
 
-          <hr>
+    <!-- Conteúdo do Post -->
+    <article class="post-conteudo">
+        {{ post.conteudo_formatado|safe }}
+    </article>
 
-          <div class="comentarios" style="color: blue;">
-              <h2>Comentários</h2>
-              {% if comentarios %}
-                  {% for c in comentarios %}
-                      <div class="comentario">
-                          <span class="coment-autor">{{ c.autor }}</span>
-                          <span class="coment-data">{{ c.data }}</span>
-                          <div class="coment-conteudo">
-                              {{ c.conteudo }}
-                          </div>
-                      </div>
-                      <hr>
-                  {% endfor %}
-              {% else %}
-                  <p class="sem-comentario">Nenhum comentário encontrado.</p>
-              {% endif %}
-          </div>
-<!-- ####################### -->
-        {% endblock %}
+    <!-- Comentários (se existirem) -->
+    {% if post.comentarios %}
+    <section class="comentarios-section">
+        <h3 class="comentarios-titulo">Comentários ({{ post.total_comentarios }})</h3>
+        
+        {% for comentario in post.comentarios %}
+            <div class="comentario">
+                <div class="comentario-header">
+                    <strong class="comentario-autor">{{ comentario.autor|safe }}</strong>
+                    <time class="comentario-data">{{ comentario.data_formatada|safe }}</time>
+                </div>
+                <div class="comentario-conteudo">
+                    {{ comentario.conteudo|safe }}
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+    {% endif %}
+    {% endblock %}
