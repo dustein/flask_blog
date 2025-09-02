@@ -2,6 +2,9 @@
 header {
   background-color: #ececec;
   color: #313131;
+  text-align: center;
+  max-width: 768px;
+  margin: 0 auto;
 }
 
 .header-img {
@@ -111,4 +114,20 @@ header {
     color: #495057;
     line-height: 1.2;
     font-size: 0.8rem;
+}
+
+footer {
+  background-color: #313131;
+  color: #dee2e6;
+  padding: 0.2rem;
+  text-align: center;
+}
+/* Estilos para telas a partir de 768px */
+@media screen and (min-width: 768px) {
+  main {
+    font-size: 1.5rem;
+    max-width: 1256px;
+    margin: 0 auto;
+  }
+
 }

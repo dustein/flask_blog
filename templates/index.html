@@ -8,33 +8,34 @@
 {% endblock %}
 
 {% block main %}
-    <!-- Cabeçalho do Post -->
-    <div class="post-header">
-        <h1 class="post-titulo">{{ post.titulo|safe }}</h1>
-        <p class="post-data">{{ post.data_formatada|safe }}</p>
-    </div>
+    <main>
+        <div class="post-header">
+            <h1 class="post-titulo">{{ post.titulo|safe }}</h1>
+            <p class="post-data">{{ post.data_formatada|safe }}</p>
+        </div>
 
-    <!-- Conteúdo do Post -->
-    <article class="post-conteudo">
-        {{ post.conteudo_formatado|safe }}
-    </article>
+        <!-- Conteúdo do Post -->
+        <article class="post-conteudo">
+            {{ post.conteudo_formatado|safe }}
+        </article>
 
-    <!-- Comentários (se existirem) -->
-    {% if post.comentarios %}
-    <section class="comentarios-section">
-        <h3 class="comentarios-titulo">Comentários ({{ post.total_comentarios }})</h3>
-        
-        {% for comentario in post.comentarios %}
-            <div class="comentario">
-                <div class="comentario-header">
-                    <strong class="comentario-autor">{{ comentario.autor|safe }}</strong>
-                    <time class="comentario-data">{{ comentario.data_formatada|safe }}</time>
+        <!-- Comentários (se existirem) -->
+        {% if post.comentarios %}
+        <section class="comentarios-section">
+            <h3 class="comentarios-titulo">Comentários ({{ post.total_comentarios }})</h3>
+            
+            {% for comentario in post.comentarios %}
+                <div class="comentario">
+                    <div class="comentario-header">
+                        <strong class="comentario-autor">{{ comentario.autor|safe }}</strong>
+                        <time class="comentario-data">{{ comentario.data_formatada|safe }}</time>
+                    </div>
+                    <div class="comentario-conteudo">
+                        {{ comentario.conteudo|safe }}
+                    </div>
                 </div>
-                <div class="comentario-conteudo">
-                    {{ comentario.conteudo|safe }}
-                </div>
-            </div>
-        {% endfor %}
-    </section>
-    {% endif %}
+            {% endfor %}
+        </section>
+        {% endif %}
+    </main>
     {% endblock %}

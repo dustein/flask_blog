@@ -171,7 +171,7 @@ def formatar_conteudo(conteudo):
     # Ajustar URLs das imagens para caminhos relativos
     conteudo = re.sub(
         r'src="http://www\.casodepolicia\.com/wp-content/uploads/',
-        'src="/uploads/',
+        'src="uploads/',
         conteudo
     )
     
