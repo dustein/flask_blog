@@ -347,7 +347,7 @@ def gerar_pagina_indice(posts_dados):
         for post in posts_ordenados:
             html_indice += f'''
             <li>
-                <a href="estaticos/{post['arquivo']}">{post['titulo']}</a>
+                <a href="{post['arquivo']}">{post['titulo']}</a>
                 <span class="post-id">ID: {post['id']}</span>
                 <span class="data">{post['data']}</span>
             </li>'''
